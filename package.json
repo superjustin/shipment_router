@@ -9,18 +9,6 @@
     "start:debug": "DEBUG=true ts-node app.ts",
     "test": "jest"
   },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.json"
-      }
-    },    
-    "testMatch": [
-      "**/tests/**/*.ts"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
