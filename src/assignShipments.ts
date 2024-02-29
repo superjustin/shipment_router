@@ -12,11 +12,10 @@ interface AssignmentResult {
   assignments: Assignment[];
 }
 
-const debugMode = process.argv.includes('-debug');
-
 const assignShipments = (
   destinations: string[],
-  drivers: string[]
+  drivers: string[],
+  debugMode: boolean | false,
 ): AssignmentResult => {
   let totalSuitabilityScore = 0;
   const assignments: Assignment[] = [];
@@ -30,6 +29,10 @@ const assignShipments = (
       pairingSuitabilityScore
     };
   }));
+
+  if (debugMode) {
+    console.log(pairs);
+  }
 
   pairs.sort((a, b) => b.pairingSuitabilityScore - a.pairingSuitabilityScore);
 

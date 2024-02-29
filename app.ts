@@ -8,7 +8,7 @@ const [shippingDestinationsFile, driversFile] = process.argv.slice(2, 4);
 const destinations = readFileSync(shippingDestinationsFile, 'utf-8').split('\n').filter(Boolean);
 const drivers = readFileSync(driversFile, 'utf-8').split('\n').filter(Boolean);
 
-const { totalSuitabilityScore, assignments } = assignShipments(destinations, drivers);
+const { totalSuitabilityScore, assignments } = assignShipments(destinations, drivers, debugMode);
 
 console.log(`Total Suitability Score: ${totalSuitabilityScore}`);
 
