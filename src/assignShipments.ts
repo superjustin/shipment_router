@@ -54,10 +54,6 @@ const assignShipmentsAscendingOrder = (
 
   const pairs = generatePairs(destinations, drivers);
 
-  if (debugMode) {
-    console.log(pairs);
-  }
-
   const groupedByDriver: {[key: string]: Assignment[]} = {};
   pairs.forEach(pair => {
     if (!groupedByDriver[pair.driver]) {
